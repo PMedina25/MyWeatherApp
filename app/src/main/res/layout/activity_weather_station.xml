@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!-- This layout defines the main screen and will display the list of weather or an error -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/weather_station_layout"
+    tools:context=".ui.WeatherStationActivity">
+
+    <FrameLayout
+        android:id="@+id/recyclerview_weather_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <!-- Display the static master list fragment -->
+        <fragment
+            android:id="@+id/fragmentWeatherRecyclerView"
+            android:name="com.example.my_weather_app.fragment.WeatherListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_weather_list" />
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+</RelativeLayout>

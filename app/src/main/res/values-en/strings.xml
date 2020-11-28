@@ -1,0 +1,53 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">MyWeatherStation</string>
+    <string name="datetime">Datetime</string>
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="state">Weather</string>
+
+    <string name="wind_label">Wind</string>
+    <!-- Wind in kph -->
+    <string name="format_wind_kmh">
+        <xliff:g id="speed">%1$1.0f</xliff:g> km/h
+        <xliff:g id="direction">%2$s</xliff:g>
+    </string>
+
+    <!-- Wind in mph -->
+    <string name="format_wind_mph">
+        <xliff:g id="speed">%1$1.0f</xliff:g> mph
+        <xliff:g id="direction">%2$s</xliff:g>
+    </string>
+
+    <string name="pressure_label">Pressure</string>
+    <!-- Pressure format -->
+    <string name="format_pressure">
+        <xliff:g id="pressure">%1.0f</xliff:g> hPa
+    </string>
+
+    <string name="humidity_label">Humidity</string>
+    <!-- Humidity format -->
+    <string name="format_humidity">
+        <xliff:g id="humidity">%1.0f</xliff:g> %%
+    </string>
+
+    <string name="temperature_weather_map_label">Temperature</string>
+    <string name="temperature_label">Temp</string>
+    <!-- Temperature format -->
+    <string name="format_temperature">
+        <xliff:g id="temp">%1.0f</xliff:g>\u00B0
+    </string>
+    <string name="ground_temperature_label">Gnd temp</string>
+    <string name="air_quality_label">Air Quality</string>
+    <string name="rainfall_label">Rainfall</string>
+    <string name="wind_gust">Wind gust</string>
+
+    <string name="sign_out">Sign Out</string>
+
+    <!-- Button texts -->
+    <string name="weather_station">Estación Meteo</string>
+    <string name="current_weather">Current Weather</string>
+
+    <!-- Notification values -->
+    <string name="wifi_disabled">WiFi disconnected</string>
+
+</resources>

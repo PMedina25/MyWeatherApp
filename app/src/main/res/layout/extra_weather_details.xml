@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/extra_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/detail_accent_pane_background"
+    android:paddingStart="@dimen/forecast_detail_horizontal_padding"
+    android:paddingLeft="@dimen/forecast_detail_horizontal_padding"
+    android:paddingTop="@dimen/forecast_detail_vertical_padding"
+    android:paddingEnd="@dimen/forecast_detail_horizontal_padding"
+    android:paddingRight="@dimen/forecast_detail_horizontal_padding"
+    android:paddingBottom="@dimen/forecast_detail_vertical_padding">
+
+    <!-- This guideline divides the layout into a left and right half and is used for alignment -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!-- Temperature max and min label -->
+    <TextView
+        android:id="@+id/temperature_label"
+        style="@style/DetailLabel"
+        android:text="@string/temperature_weather_map_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+        app:layout_constraintTop_toTopOf="@+id/extra_details"
+        app:layout_constraintVertical_bias="0.20" />
+
+    <!-- Temperature max measurement -->
+    <TextView
+        android:id="@+id/temperature_max"
+        style="@style/ExtraWeatherMeasurement"
+        app:layout_constraintBottom_toBottomOf="@+id/temperature_label"
+        app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
+        tools:text="19º" />
+
+    <!-- Temperature min measurement -->
+    <TextView
+        android:id="@+id/temperature_min"
+        style="@style/ExtraWeatherMeasurement"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/temperature_label"
+        app:layout_constraintLeft_toLeftOf="@+id/temperature_max"
+        app:layout_constraintStart_toEndOf="@+id/temperature_max"
+        tools:text="10º" />
+
+    <!-- Humidity label -->
+    <TextView
+        android:id="@+id/humidity_label"
+        style="@style/DetailLabel"
+        android:text="@string/humidity_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+        app:layout_constraintTop_toTopOf="@+id/extra_details"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <!-- Humidity measurement -->
+    <TextView
+        android:id="@+id/humidity"
+        style="@style/ExtraWeatherMeasurement"
+        app:layout_constraintBottom_toBottomOf="@+id/humidity_label"
+        app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
+        tools:text="38%" />
+
+    <!-- Pressure label -->
+    <TextView
+        android:id="@+id/pressure_label"
+        style="@style/DetailLabel"
+        android:text="@string/pressure_label"
+        app:layout_constraintBottom_toBottomOf="@+id/extra_details"
+        app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+        app:layout_constraintTop_toTopOf="@+id/extra_details"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <!-- Pressure measurement -->
+    <TextView
+        android:id="@+id/pressure"
+        style="@style/ExtraWeatherMeasurement"
+        app:layout_constraintBottom_toBottomOf="@+id/pressure_label"
+        app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
+        tools:text="995 hPa" />
+
+    <!-- Wind label -->
+    <TextView
+        android:id="@+id/wind_label"
+        style="@style/DetailLabel"
+        android:text="@string/wind_label"
+        app:layout_constraintBottom_toBottomOf="@+id/extra_details"
+        app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.80" />
+
+    <!-- Wind speed measurement -->
+    <TextView
+        android:id="@+id/wind_speed"
+        style="@style/ExtraWeatherMeasurement"
+        app:layout_constraintBottom_toBottomOf="@+id/wind_label"
+        app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
+        tools:text="4km/h" />
+
+    <!-- Wind direction measurement -->
+    <TextView
+        android:id="@+id/wind_direction"
+        style="@style/ExtraWeatherMeasurement"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/wind_label"
+        app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
+        app:layout_constraintStart_toEndOf="@+id/wind_speed"
+        tools:text="45º" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

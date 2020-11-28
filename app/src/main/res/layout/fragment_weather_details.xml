@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+         - This Guideline divides the screen into a left half and a right half and is used to    -
+         - anchor the views to the middle of the screen.                                         -
+         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            tools:layout_editor_absoluteX="192dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
+            tools:text="Saturday, September 24" />
+
+        <!-- Icon indicating weather condition -->
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/horizontal_middle"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/congelado" />
+
+        <TextView
+            android:id="@+id/current_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/primary_text"
+            android:textSize="72sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="19\u00b0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/extra_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/detail_accent_pane_background"
+        android:paddingTop="@dimen/forecast_detail_vertical_padding"
+        android:paddingBottom="@dimen/forecast_detail_vertical_padding">
+
+        <!-- This guideline divides the layout into a left and right half and is used for alignment -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_left_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <!-- This guideline divides the layout into a left and right half and is used for alignment -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_middle_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <!-- This guideline divides the layout into a left and right half and is used for alignment -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_right_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.72" />
+
+        <!-- Temperature max and min label -->
+        <TextView
+            android:id="@+id/temperature_label"
+            style="@style/DetailLabel"
+            android:text="@string/temperature_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+            app:layout_constraintTop_toTopOf="@+id/extra_details"
+            app:layout_constraintVertical_bias="0.20" />
+
+        <!-- Temperature max measurement -->
+        <TextView
+            android:id="@+id/temperature"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/temperature_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_left_details"
+            tools:text="19º" />
+
+        <!-- Humidity label -->
+        <TextView
+            android:id="@+id/humidity_label"
+            style="@style/DetailLabel"
+            android:text="@string/humidity_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+            app:layout_constraintTop_toTopOf="@+id/extra_details"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <!-- Humidity measurement -->
+        <TextView
+            android:id="@+id/humidity"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/humidity_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_left_details"
+            tools:text="38%" />
+
+        <!-- Pressure label -->
+        <TextView
+            android:id="@+id/pressure_label"
+            style="@style/DetailLabel"
+            android:text="@string/pressure_label"
+            app:layout_constraintBottom_toBottomOf="@+id/extra_details"
+            app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+            app:layout_constraintTop_toTopOf="@+id/extra_details"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <!-- Pressure measurement -->
+        <TextView
+            android:id="@+id/pressure"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/pressure_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_left_details"
+            tools:text="995 hPa" />
+
+        <!-- Air quality label -->
+        <TextView
+            android:id="@+id/air_quality_label"
+            style="@style/DetailLabel"
+            android:text="@string/air_quality_label"
+            app:layout_constraintBottom_toBottomOf="@+id/extra_details"
+            app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+            app:layout_constraintTop_toTopOf="@+id/extra_details"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <!-- Pressure measurement -->
+        <TextView
+            android:id="@+id/air_quality"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/air_quality_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_left_details"
+            tools:text="350 ICA" />
+
+        <!-- Ground temperature label -->
+        <TextView
+            android:id="@+id/ground_temperature_label"
+            style="@style/DetailLabel"
+            android:text="@string/ground_temperature_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle_details"
+            app:layout_constraintTop_toTopOf="@+id/extra_details"
+            app:layout_constraintVertical_bias="0.20" />
+
+        <!-- Temperature max measurement -->
+        <TextView
+            android:id="@+id/ground_temperature"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/ground_temperature_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_right_details"
+            tools:text="19º" />
+
+        <!-- Rainfall label -->
+        <TextView
+            android:id="@+id/rainfall_label"
+            style="@style/DetailLabel"
+            android:text="@string/rainfall_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle_details"
+            app:layout_constraintTop_toTopOf="@+id/extra_details"
+            app:layout_constraintVertical_bias="0.40" />
+
+        <!-- Temperature max measurement -->
+        <TextView
+            android:id="@+id/rainfall"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/rainfall_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_right_details"
+            tools:text="19º" />
+
+        <!-- Wind label -->
+        <TextView
+            android:id="@+id/wind_label"
+            style="@style/DetailLabel"
+            android:text="@string/wind_label"
+            app:layout_constraintBottom_toBottomOf="@+id/extra_details"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle_details"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.60" />
+
+
+        <!-- Wind speed measurement -->
+        <TextView
+            android:id="@+id/wind_speed"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/wind_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_right_details"
+            tools:text="4km/h" />
+
+        <!-- Wind direction measurement -->
+        <TextView
+            android:id="@+id/wind_direction"
+            style="@style/ExtraWeatherMeasurement"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/wind_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_right_details"
+            app:layout_constraintStart_toEndOf="@+id/wind_speed"
+            tools:text="45º" />
+
+        <!-- Wind gusts -->
+        <TextView
+            android:id="@+id/wind_gusts_label"
+            style="@style/DetailLabel"
+            android:text="@string/wind_gust"
+            app:layout_constraintBottom_toBottomOf="@+id/extra_details"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle_details"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.80" />
+
+
+        <!-- Wind speed measurement -->
+        <TextView
+            android:id="@+id/wind_gust"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/wind_gusts_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_right_details"
+            tools:text="6km/h" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
