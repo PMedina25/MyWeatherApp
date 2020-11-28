@@ -1,2 +1,2 @@
 # MyWeatherStation App
-Repository for the Mobile Devices project
+Android App wich displays the data from a weather station built with a Raspberry Pi. It uses Firebase as backend.
